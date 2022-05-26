@@ -1,0 +1,21 @@
+name: test
+
+on:
+  push:
+    branches:
+      - main
+
+    tags-ignore:
+      - "v**"
+
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - run: echo run
